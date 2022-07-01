@@ -16,3 +16,4 @@ Variables to store
 
 # Bugs
 - Since only date is stored, when a month has passed, user won't be able to click on the same day
+- Remove the margin bottom on font-awesome icon

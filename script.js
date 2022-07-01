@@ -59,6 +59,8 @@ function boxIsClicked(boxEl, isFilledIndex){
     DateOfLastClick = getTodayDate()
 
     makeAllBoxesUnclickable()
+    updateStatus()
+    updateCount()
 }
 
 function updateBoxStatus(boxEl){
@@ -71,4 +73,32 @@ function makeAllBoxesUnclickable(){
         //Remove event listeners from Element
         box.replaceWith(box.cloneNode(true));   
     })
+}
+
+//TODAY STATUS
+const statusDiv = document.querySelector('.status')
+const completed = document.querySelector('.completed')
+const incomplete = document.querySelector('.incomplete')
+
+updateStatus()
+
+function updateStatus() {
+    if(isTodayClickable()){
+        completed.style.display = 'none'
+        incomplete.style.display = 'block'
+    }else{
+        completed.style.display = 'block'
+        incomplete.style.display = 'none'
+    }
+}
+
+//UPDATE COUNT NUMBER
+
+const countEl = document.getElementById('count')
+
+updateCount()
+
+function updateCount(){
+    const boxesFilled_true = boxesFilled.filter(value => value === true)
+    countEl.innerText = boxesFilled_true.length
 }
