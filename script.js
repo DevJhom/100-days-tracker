@@ -17,6 +17,7 @@ if(localStorage.getItem("boxesArray") === null) {
 renderBoxes();
 
 function renderBoxes() {
+
     boxesArray.forEach((isThisBoxFilled,boxIndex) => {
         const box = document.createElement('div')
         box.id = boxIndex
@@ -24,19 +25,20 @@ function renderBoxes() {
 
         if(isThisBoxFilled){
             updateBoxStatus(box)
-        }
-
-        if(isTodayClickable() && !isThisBoxFilled){
+        }else{
             makeBoxClickable(box, boxIndex)
         }
 
         container.appendChild(box)
 
     })
+
+    if(!isTodayClickable()){
+        makeAllBoxesUnclickable();
+    }
 }
 
 function isTodayClickable(){
-
     if(dateOfLastClick == getTodayDate())
         return false
     else
@@ -46,7 +48,7 @@ function isTodayClickable(){
 function getTodayDate(){
     const date = new Date();
     const today = date.getDate();
-    return today
+    return today.toString();
 }
 
 function makeBoxClickable(boxEl, boxIndex){
@@ -57,14 +59,16 @@ function makeBoxClickable(boxEl, boxIndex){
 
 //This function will be executed when a box is clicked
 function boxIsClicked(boxEl, boxIndex){
-    updateBoxStatus(boxEl)
     boxesArray[boxIndex] = true
+    dateOfLastClick = getTodayDate()
     localStorage.setItem("boxesArray", JSON.stringify(boxesArray));
     localStorage.setItem("dateOfLastClick", getTodayDate());
 
+    updateBoxStatus(boxEl)
     makeAllBoxesUnclickable()
     updateStatus()
     updateCount()
+
 }
 
 function updateBoxStatus(boxEl){
