@@ -27,32 +27,47 @@ header .left {
     float: left;
 }
 
+header .left i {
+    color: var(--theme-color);
+}
+
 header .right {
     float: right;
     background-color: var(--theme-color);
     color: #fff;
     border-radius: 25px 0 0 25px;
-    padding: 15px 30px;
+    padding: 10px 30px;
 }
 
-.right .status div {
+.right div {
     display: flex;
     flex-direction: row;
 }
 
-.right .status .completed i {
-    color: green;
-    font-size: 60px;
-    margin-right: 10px;
-    border-radius: 50%;
-    background-color: #fff;
-}
-
-.right .status .incomplete i {
+.right .incomplete i {
     color: #EDEDED;
     font-size: 60px;
     margin-right: 10px;
+}
+
+.right .completed i {
+    color: green;
+    font-size: 60px;
+    margin-right: 10px;
+    position: relative;
+    z-index: 1;
+}
+
+.right .completed .icon-bg {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 50px;
+    width: 50px;
     border-radius: 50%;
+    background-color: #EDEDED;
+    z-index: -1;
 }
 
 .container {

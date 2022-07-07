@@ -16,30 +16,39 @@
   </head>
   <body>
     <header>
+
       <div class="left">
-        <h2>Daily Tracker</h2>
+        <h2><i class="fa-solid fa-arrow-trend-up"></i> Daily Tracker</h2>
       </div>
+
       <div class="right">
         <h3>Today Click:</h3> 
+
         <div class="status">
-          <div class="completed">
-            <div>
-              <i class="fa-solid fa-circle-check"></i>
-              <h2>Completed</h2>
-          </div>
-          </div>
           <div class="incomplete">
             <div>
-              <i class="fa-solid fa-circle-check"></i>
+              <i class="fa-solid fa-circle-xmark"></i>
               <h2>Incomplete</h2>
+            </div>
           </div>
+
+          <div class="completed">
+            <div>
+              <i class="fa-solid fa-circle-check">
+                <div class="icon-bg"></div>
+              </i>
+              <h2>Completed</h2>
+            </div>
           </div>
         </div>
       </div>
+
     </header>
       <h1>One step at a time, for 100 days.</h1>
-      <div class="container"></div>
-      <p>You have completed <span id="count"></span><span id="max">/100.</span></p>
+      <div class="container">
+        <!-- Boxes get inserted here by Javascript -->
+      </div>
+      <p>You have completed <span id="count"></span>/100.</p>
 
     <script src="script.js"></script>
   </body>
