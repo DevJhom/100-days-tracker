@@ -1,13 +1,13 @@
 # Todos
 
-## Store the variables in database or localStorage for now
+## Store the variables in database
 Variables to store 
-1. boxesArray array
+1. boxesArray
 2. DateOfLastClick
 
 ## Add Styles and explanation 
-- Add cursor to clickable boxes
-- Some texts explaining what this project is, how it works
+- Add cursor pointer to clickable boxes
+- Make responsive
 
 ## Add more functionalities
 1. Function for adding another challenge e.g. one for learning Chinese, one for learning Guitar, etc.
