@@ -11,7 +11,8 @@ This application can be used to track your progress when you want to continuousl
 
 It contains 100 boxes, where a box can be clicked by user when they have completed their activity for the day. 
 
-(./preview.gif)
+![preview](./preview.gif)
+
 
 The application only allows user to click one box per day. User must come back the day after or later days to be able to click another box.
 
